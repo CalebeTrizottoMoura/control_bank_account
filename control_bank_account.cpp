@@ -39,9 +39,9 @@ int main(){
     do{
         if(cont > 0){
             system("pause");
+            system("cls");
         }
         cont++;
-        system("cls");
         std::cout << "========== MENU PRINCIPAL ==========" << std::endl;
         std::cout << "1 - Depósito" << std::endl;
         std::cout << "2 - Saque" << std::endl;
@@ -83,7 +83,7 @@ int main(){
             std::cout << "Seu saldo atual é de R$ " << account.see_balance() << ".\n" << std::endl;
             break;
         case 4:
-            std::cout << "========== SAINDO ==========\n" << std::endl;
+            std::cout << "========== SAINDO ==========" << std::endl;
             break;
         default:
             std::cout << "========== OPÇÃO INVÁLIDA ==========\n" << std::endl;
