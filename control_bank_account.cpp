@@ -42,6 +42,7 @@ int main(){
             system("cls");
         }
         cont++;
+        
         std::cout << "========== MENU PRINCIPAL ==========" << std::endl;
         std::cout << "1 - Depósito" << std::endl;
         std::cout << "2 - Saque" << std::endl;
