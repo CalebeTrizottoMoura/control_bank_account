@@ -19,7 +19,6 @@ public:
             balance = balance - wit;
             return wit; 
         }else{
-            std::cout << "Saldo insuficiente. Por favor, tente novamente.\n" << std::endl;
             return 0;
         }
     }
@@ -32,12 +31,17 @@ public:
 int main(){
     setlocale(LC_ALL, "portuguese");
 
-    int option;
+    int option, cont = 0;
     double value, amount;
 
     BankAccount account(0);
 
     do{
+        if(cont > 0){
+            system("pause");
+        }
+        cont++;
+        system("cls");
         std::cout << "========== MENU PRINCIPAL ==========" << std::endl;
         std::cout << "1 - Depósito" << std::endl;
         std::cout << "2 - Saque" << std::endl;
@@ -58,8 +62,6 @@ int main(){
 
             std::cout << "========== RESULTADO ==========" << std::endl;
             std::cout << "Depósito realizado com sucesso!\n" << std::endl;
-            system("pause");
-            system("cls");
             break;
         case 2:
             std::cout << "========== SAQUE ==========" << std::endl;
@@ -72,25 +74,19 @@ int main(){
             std::cout << "========== RESULTADO ==========" << std::endl;
             if(value > 0){
                 std::cout << "Saque realizado com sucesso!\n" << std::endl;
+            }else{
+                std::cout << "Saldo insuficiente. Por favor, tente novamente.\n" << std::endl;
             }
-            system("pause");
-            system("cls");
             break;
         case 3:
             std::cout << "========== SALDO ==========" << std::endl;
             std::cout << "Seu saldo atual é de R$ " << account.see_balance() << ".\n" << std::endl;
-            system("pause");
-            system("cls");
             break;
         case 4:
             std::cout << "========== SAINDO ==========\n" << std::endl;
-            system("pause");
-            system("cls");
             break;
         default:
             std::cout << "========== OPÇÃO INVÁLIDA ==========\n" << std::endl;
-            system("pause");
-            system("cls");
             break;
         }
     }while(option != 4);
